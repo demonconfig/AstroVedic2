@@ -172,3 +172,54 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+
+
+/*==================== zodiac popup ====================*/ 
+let preveiwContainer = document.querySelector('.products-preview');
+let previewBox = preveiwContainer.querySelectorAll('.preview');
+
+document.querySelectorAll('.products-container .product').forEach(product =>{
+  product.onclick = () =>{
+    preveiwContainer.style.display = 'flex';
+    let name = product.getAttribute('data-name');
+    previewBox.forEach(preview =>{
+      let target = preview.getAttribute('data-target');
+      if(name == target){
+        preview.classList.add('active');
+      }
+    });
+  };
+});
+
+previewBox.forEach(close =>{
+  close.querySelector('.fa-times').onclick = () =>{
+    close.classList.remove('active');
+    preveiwContainer.style.display = 'none';
+  };
+});
+
+
+/*==================== current date ====================*/ 
+function formatDate(date) {
+    var day = date.getDate();
+    var month = date.getMonth() + 1; 
+    var year = date.getFullYear();
+
+    if (day < 10) {
+       day = '0' + day;
+    }
+    if (month < 10) {
+       month = '0' + month;
+    }
+    
+    return day + '/' + month + '/' + year;
+ }
+
+ var currentDate = new Date();
+ 
+ var priceElements = document.querySelectorAll('.price');
+
+ priceElements.forEach(function(element) {
+    element.textContent = formatDate(currentDate);
+ });
