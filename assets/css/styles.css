@@ -321,10 +321,16 @@ input {
   color: var(--white-color);
 }
 
+.home__data-subtitle {
+  display: block;
+  font-weight: var(--font-semi-bold);
+  margin-bottom: var(--mb-0-75);
+}
+
 .astrovedic h5{
   font-size: 50px;
   font-weight: var(--font-semi-bold);
-  margin-bottom: 1rem;
+  margin-bottom: var(--mb-0-75);
   color: transparent;
   font-family: 'Verdana', sans-serif;
   -webkit-text-stroke: 1px #ffffff;
@@ -342,7 +348,7 @@ input {
 .home__data-title {
   font-size: var(--biggest-font-size);
   font-weight: var(--font-medium);
-  margin-bottom: 25rem;
+  margin-bottom: var(--mb-2-5);
 }
 
 .home__social {
@@ -364,7 +370,7 @@ input {
   column-gap: .5rem;
   position: absolute;
   right: 0;
-  bottom: 15rem;
+  bottom: 1rem;
   width: 300px;
 }
 
